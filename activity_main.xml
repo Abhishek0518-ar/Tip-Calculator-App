@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/et_cost_of_service"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:hint="@string/cost_of_service"
+        android:textColorHint="@android:color/white"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:importantForAutofill="no" />
+    <TextView
+        android:id="@+id/tv_service_question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/how_was_the_service"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/et_cost_of_service"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <RadioGroup
+        android:id="@+id/rg_tip_options"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/tv_service_question"
+        app:layout_constraintStart_toStartOf="parent"
+        android:checkedButton="@+id/rbtn_awesome">
+
+        <RadioButton
+            android:id="@+id/rbtn_awesome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/awesome_20"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+        <RadioButton
+            android:id="@+id/rbtn_good"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/good_18"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+        <RadioButton
+            android:id="@+id/rbtn_okay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="@string/okay_15"
+            android:textSize="18sp" />
+
+    </RadioGroup>
+    <Switch
+        android:id="@+id/sw_tip_round_of"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:checked="true"
+       app:layout_constraintTop_toBottomOf="@+id/rg_tip_options"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <TextView
+        android:id="@+id/tv_tip_round_of_question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/rg_tip_options"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/round_up_tip"
+        android:textColor="@color/white"/>
+    <Button
+        android:id="@+id/btn_calculate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tv_tip_round_of_question"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/calculate"
+        android:layout_marginTop="8dp"/>
+    <TextView
+        android:id="@+id/tv_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/btn_calculate"
+        android:hint="Value"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="16sp"
+        android:layout_marginEnd="8dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
